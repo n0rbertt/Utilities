@@ -9,5 +9,5 @@ Switching to windows 10 for some reason left me without the ability to use Sound
 Dynmotd
 
 Just a nice motd to login to
-
+<br /> <br />  <center> <img src="http://puu.sh/rW48i/7b653cf36c.png" width="555"/> </center>
 
