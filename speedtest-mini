@@ -1,0 +1,7 @@
+yum install php php-mysql php-gd php-mcrypt -y
+cd /var/www/html/
+mkdir speed
+wget http://c.speedtest.net/mini/mini.zip
+unzip mini.zip
+mv index-php.html index.html
+systemctl restart httpd
