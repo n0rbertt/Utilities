@@ -1,3 +1,4 @@
+# Install - yum install fortune-mod cowsay -y
 USER=`whoami`
 HOSTNAME=`uname -n`
 IP=`hostname -i`
