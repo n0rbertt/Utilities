@@ -1,4 +1,19 @@
 # Install - yum install fortune-mod cowsay -y
+# Installation:
+#
+# 1.   vim /etc/ssh/sshd_config 
+#      PrintMotd no
+#
+# 2.   vim /etc/pam.d/login
+#      # session optional pam_motd.so
+#
+# 3.   vim /etc/profile
+#      /usr/local/bin/dynmotd # Place at the bottom
+#
+# 4.   Then of course drop this file at
+#      /usr/local/bin/dynmotd
+# chmod +x /usr/local/bin/dynmotd
+
 USER=`whoami`
 HOSTNAME=`uname -n`
 IP=`hostname -i`
