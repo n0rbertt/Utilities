@@ -2,8 +2,8 @@
 echo "For which domain would you like to grab the sitemaps of?"
 read domain
 
-mkdir $domain
-cd $domain
+mkdir -p ~/bin/sitemaps/$domain
+cd ~/bin/sitemaps/$domain
 wget http://$domain/sitemap.xml
 grep http sitemap.xml  | grep http | grep xml | sed 's/<loc>//' | sed 's/<\/loc>//' |  awk '{print $1}' | grep "^http" > maps
 wget -i maps
@@ -14,8 +14,11 @@ VAL=`wc -l allurls.txt | awk '{print $1}'`
 
 read -p "Would you like to see the $VAL urls? (y/n)" choice
 
+cd ~/bin/sitemaps/
+
+
 case "$choice" in
-  y|Y ) cat allurls.txt;;
+  y|Y ) cat ~/bin/sitemaps/$domain/allurls.txt;;
   n|N ) echo "They have been added to $domain/allurls.txt";;
   * ) echo "invalid";;
 esac
