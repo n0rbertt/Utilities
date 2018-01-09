@@ -7,9 +7,7 @@ cd $domain
 wget http://$domain/sitemap.xml
 grep http sitemap.xml  | grep http | grep xml | sed 's/<loc>//' | sed 's/<\/loc>//' |  awk '{print $1}' | grep "^http" > maps
 wget -i maps
-#grep http sitemap* | sed 's/<loc>//' | sed 's/<\/loc>//' | grep -v xml | sort | awk '{print $1}'  > allurls.txt
 
-#awk '{print $1}' allurls.txt
 grep http *sitemap*  | awk '{print $2}' |  grep -v xml | sed 's/<loc>//' | sed 's/<\/loc>//' |  grep "^http" | sort  | uniq > allurls.txt
 
 VAL=`wc -l allurls.txt | awk '{print $1}'`
@@ -21,3 +19,4 @@ case "$choice" in
   n|N ) echo "They have been added to $domain/allurls.txt";;
   * ) echo "invalid";;
 esac
+
